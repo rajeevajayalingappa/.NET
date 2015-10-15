@@ -1,0 +1,14 @@
+PTC Loader version 1.6.5_TEST2
+MSG| Button             | 2015-10-15 06:55:09:205| Start server button has pressed
+COM| 0.0.0.0            | 2015-10-15 06:55:09:209| TCP monitor started.
+COM| 10.255.255.100:10010| 2015-10-15 06:55:09:236| UDP monitor started.
+MSG| Button             | 2015-10-15 06:55:09:821| Stop server button has pressed
+ERR|                    | 2015-10-15 06:55:09:832| AcceptConnection: An error occurred while accepting a TCP client connection.
+ERR| 0.0.0.0            | 2015-10-15 06:55:09:839| UDP:: ReceivedData (error 2) System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceiveFrom(IAsyncResult asyncResult, EndPoint& endPoint)
+   at WRE.Ulp.UdpMonitor.ReceivedData(IAsyncResult ar)
+ERR|                    | 2015-10-15 06:55:09:845| System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndAccept(IAsyncResult asyncResult)
+   at WRE.Ulp.TcpMonitor.AcceptConnection(IAsyncResult ar)
