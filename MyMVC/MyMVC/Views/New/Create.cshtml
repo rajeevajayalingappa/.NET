@@ -1,0 +1,31 @@
+﻿@model MyMVC.Models.Default
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create A Product</h2>
+
+<table>
+@foreach (System.Data.DataRow a in Model.GetData().Rows)
+{
+    <tr><td>
+    @Html.Label(a["vName"].ToString())
+    </td></tr>
+}
+</table>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Product</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-label">
+            @Html.TextBoxFor(model => model.name)
+        </div>
+        <input type="submit" value="submit" />
+    </fieldset>
+}

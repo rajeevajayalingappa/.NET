@@ -1,0 +1,90 @@
+﻿@*@model MyMVC.Models.StudentDetails
+
+@{
+    ViewBag.Title = "How to Bind Data to Webgrid in ASP.net MVC Using C#.Net";
+}
+<b>
+    Bind Data to Webgrid in ASP.net MVC</b>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: table;
+    }
+    .container {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .content {
+        background-color: red; /* just for the demo */
+        display: inline-block;
+        text-align: left;
+    }
+
+    table, td, th
+    {
+        border: 1px solid green;
+        border-collapse:collapse;
+    }
+   
+    th
+    {
+        border: 1px solid black;
+        background-color: green;
+        color: white;
+    }
+</style>*@
+
+
+@model MyMVC.Models.GetData1
+@*@using System.Data;
+
+<h2>Report</h2> 
+
+<table> 
+    <thead> 
+    <tr>
+    @foreach (DataColumn col in Model.Stu().Columns)     
+    {          
+        <th>@col.ColumnName</th> 
+    }     
+    </tr> 
+    </thead>         
+    <tbody> 
+    @foreach (DataRow row in Model.Stu().Rows)     
+    {         
+        <tr> 
+        @foreach (DataColumn col in Model.Stu().Columns)         
+        {              
+            <td>@row[col.ColumnName]</td> 
+        }         
+        </tr> 
+    }     
+    </tbody> 
+</table>*@
+
+@*@using (@Html.BeginForm("Index", "Home"))
+{
+    var dt = Model.Stu();
+    var grid = new WebGrid(dt, canSort: false);
+
+    <div class="container">
+        @grid.GetHtml(columns:
+                                grid.Columns
+                                (
+                                    grid.Column("ID", "Stud ID")
+                                ), mode: WebGridPagerModes.Numeric)
+    </div>
+}*@
+
+
+@{
+    Layout = null;
+}
+
+@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
