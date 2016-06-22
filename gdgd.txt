@@ -1,0 +1,16 @@
+Not Flagged	[4056]	Line 163	{Group: Data
+	Railroad SCAC: UP  
+	ICD Version Length: 3
+	ICD Version: 3.0
+	Number of Repositories: 3
+		Group: Repositories
+			Repository Name Length: 8
+			Repository Name: software
+		Group: Repositories
+			Repository Name Length: 6
+			Repository Name: common
+		Group: Repositories
+			Repository Name Length: 6
+			Repository Name: config
+
+}
